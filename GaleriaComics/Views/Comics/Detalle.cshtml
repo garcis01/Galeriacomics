@@ -3,6 +3,14 @@
     var tituloComic = "EL increible Hulk!!!";
     var numeroComic = "790";
     var descripcion = "<p>Hulk ayuda a los avengers a darle en la madre a <strong>ultron</strong></p>";
+    var artists = new string[]
+        {
+            "script: dan slott",
+            "pencils: humberto ramos",
+            "Inks: victor olazaba",
+            "colors: Edgar Delgado",
+            "letter: Chris eliopoulos"
+        };
 }
 
 <!DOCTYPE html>
@@ -17,7 +25,15 @@
         <h1>@tituloComic</h1>
         <h2>@numeroComic</h2>
         <h2>descripcion</h2>
-        <div>@descripcion</div>
+        <div>@Html.Raw(descripcion)</div>
+        
+        <h5>Artista</h5>
+        <ul>
+            @foreach (var artist in artists)
+            {
+                <li>@artist</li>
+            }
+        </ul>
     </div>  
 </body>
 </html>
