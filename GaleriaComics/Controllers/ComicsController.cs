@@ -15,7 +15,7 @@ namespace GaleriaComics.Controllers
 
         public ActionResult Detalle()
         {
-            return View();
+            
             /*if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
             {
                 return new RedirectResult("/");
@@ -24,6 +24,19 @@ namespace GaleriaComics.Controllers
             {
                 Content = "mensaje desde el controlador"
             };*/
+
+            ViewBag.tituloComic = "EL increible Hulk!!!";
+            ViewBag.numeroComic = "790";
+            ViewBag.descripcion = "<p>Hulk ayuda a los avengers a darle en la madre a <strong>ultron</strong></p>";
+            ViewBag.artists = new string[]
+                {
+            "script: dan slott",
+            "pencils: humberto ramos",
+            "Inks: victor olazaba",
+            "colors: Edgar Delgado",
+            "letter: Chris eliopoulos"
+                };
+            return View();
         }
     }
 }

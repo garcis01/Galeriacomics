@@ -1,6 +1,7 @@
 ﻿@{
-    Layout = null;
-    var tituloComic = "EL increible Hulk!!!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Comic Book Detail";
+    /*var tituloComic = "EL increible Hulk!!!";
     var numeroComic = "790";
     var descripcion = "<p>Hulk ayuda a los avengers a darle en la madre a <strong>ultron</strong></p>";
     var artists = new string[]
@@ -10,30 +11,23 @@
             "Inks: victor olazaba",
             "colors: Edgar Delgado",
             "letter: Chris eliopoulos"
-        };
+        };*/
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Pagina de prueba con MVC</title>
-</head>
-<body>
-    <div>
-        <h1>@tituloComic</h1>
-        <h2>@numeroComic</h2>
+        <h1>@ViewBag.tituloComic</h1>
+        <h2>@ViewBag.numeroComic</h2>
         <h2>descripcion</h2>
-        <div>@Html.Raw(descripcion)</div>
+        <div>@Html.Raw(ViewBag.descripcion)</div>
         
-        <h5>Artista</h5>
-        <ul>
-            @foreach (var artist in artists)
-            {
-                <li>@artist</li>
-            }
-        </ul>
-    </div>  
-</body>
-</html>
+        @if (ViewBag.Artists.Length > 0)
+        {
+            <h5>Artista</h5>
+            <ul>
+             @foreach (var artist in ViewBag.artists)
+                {
+                    <li>@artist</li>
+                }
+            </ul>
+        }
+    
